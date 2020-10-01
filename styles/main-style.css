@@ -1,0 +1,194 @@
+/* === 
+ * body, .flex-container and .flex-container>*  
+ * These set-up the flexbox framework of the page...
+ * Probably best to leave these three items alone.
+ * ===
+ */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container>* {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+
+/*
+ * Here are the colors that could be useful, but 'stored in variables'
+ */
+
+:root {
+    --primary-color: #8b1919ff;
+    --secondary-color: #afafaf;
+    --very-light-gray: #e0e0e0ff;
+    --very-dark-gray: #333333;
+    --bright-red: #ff0000;
+}
+
+
+/*
+ * The next few sections control the look of the page's structure. 
+ * 
+ * The page is designed 'mobile-first' as this is best practice in 2020.
+ * So the styles for the appearance on a mible device is defined first. 
+ */
+
+.title {
+    color: white;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+
+.header {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+}
+
+.nav {
+    background-color: var(--secondary-color);
+    text-align: left;
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+}
+
+.article {
+    background-color: var(--very-light-gray);
+    text-align: left;
+    color: var(--very-dark-gray);
+}
+
+.footer {
+    background-color: rgb(105, 105, 105);
+    color: white;
+    font-size: 75%;
+}
+
+
+/* === This next section controls the appearance on tablets/medium-size screens === */
+
+@media all and (min-width: 768px) {
+    .nav {
+        text-align: left;
+        -webkit-flex: 1 auto;
+        flex: 1 auto;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .article {
+        -webkit-flex: 5 0px;
+        flex: 5 0px;
+        -webkit-order: 2;
+        order: 2;
+    }
+    .footer {
+        -webkit-order: 3;
+        order: 3;
+    }
+}
+
+
+/* === This next section controls the appearance on computers/large screens === */
+
+@media all and (min-width: 1152px) {
+    .flex-container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1122px;
+    }
+    .nav {
+        text-align: left;
+        -webkit-flex: 1 auto;
+        flex: 1 auto;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .article {
+        -webkit-flex: 5 0px;
+        flex: 5 0px;
+        -webkit-order: 2;
+        order: 2;
+    }
+    .footer {
+        -webkit-order: 3;
+        order: 3;
+        max-width: 1122px;
+    }
+}
+
+
+/* ===
+ * These are for the navigation and footer item styles.
+ *
+ * These are elements that will be on every page. Changing them 
+ * will definitely have ripple effects.
+ * 
+ * === 
+ */
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav button {
+    background-color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    margin: 4px auto;
+    width: 70%;
+    text-align: center;
+    display: list-item;
+    list-style-type: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+nav button:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transition-duration: 0.4s;
+}
+
+#onpage {
+    /* Use this ID on a button to show it as the page you're currently on. */
+    background-color: white;
+    color: var(--primary-color);
+}
+
+#license {
+    float: right;
+    opacity: 50%;
+}
+
+
+/* ===
+ * These are for styles that will be useeful across the 
+ * whole website (all pages).
+ *
+ * This would be a good place to define classes and id's 
+ * that describe appearances you'll want to have occasionally 
+ * around your website.
+ * ===
+ */
+
+.monospace {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-radius: 0.125em;
+    margin: 0;
+    padding: 0.05em 0.25em;
+}
