@@ -1,0 +1,6 @@
+Hello World!
+
+You've downloaded this file from my starter website...
+[But the modern browser you're using can probably open it as a page; which is why you're reading this now. A more exotic file, like an .STL or .gcode, would just download like normal.]
+
+Enjoy :)
